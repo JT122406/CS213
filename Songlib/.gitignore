@@ -1,0 +1,11 @@
+.idea
+.gradle
+.vscode
+build
+*.class
+*.jar
+*.tar
+*.zip
+*.bin
+*.MF
+lib.txt
