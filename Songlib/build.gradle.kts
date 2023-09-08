@@ -3,7 +3,7 @@ plugins {
     `java-library`
     idea
     application
-    id("org.openjfx.javafxplugin") version "0.0.13"
+    id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
 group = "main.java"
@@ -14,17 +14,17 @@ repositories {
 }
 
 dependencies {
-    compileOnly("org.jetbrains:annotations:24.0.0")
+    compileOnly("org.jetbrains:annotations:24.0.1")
 }
 
 javafx {
-    version = "19.0.2.1"
+    version = "20.0.2"
     modules = mutableListOf("javafx.base", "javafx.controls", "javafx.fxml", "javafx.graphics")
 }
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(19))
+        languageVersion.set(JavaLanguageVersion.of(20))
     }
 }
 
