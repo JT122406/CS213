@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import ui.UI;
@@ -27,6 +28,7 @@ public class SongLib extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.sizeToScene();
         primaryStage.setTitle("SongLib");
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("app-icon.png")));
         primaryStage.setResizable(false);
         primaryStage.show();
     }
