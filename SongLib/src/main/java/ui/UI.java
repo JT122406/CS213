@@ -158,6 +158,10 @@ public class UI {
 			String items = ListViewer.getSelectionModel().getSelectedItems().get(0);
 			for (Song song : Song.allSongs)
 				if (song.getWording().equals(items)) {
+					if (Song.isDuplicate(new Song(DetailsEdit.getText(), ArtistEdit.getText(), AlbumEdit.getText(), YearEdit.getText().isBlank() ? -1 : Integer.parseInt(YearEdit.getText())))) {
+						new Alert(Alert.AlertType.ERROR, "A Song with this title and artist already exists").showAndWait();
+						return;
+					}
 					Song.editSong(Song.allSongs.indexOf(song), DetailsEdit.getText(), ArtistEdit.getText(), AlbumEdit.getText(), YearEdit.getText().isBlank() ? -1 : Integer.parseInt(YearEdit.getText()));
 					break;
 				}
