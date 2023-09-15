@@ -5,10 +5,7 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -22,7 +19,7 @@ import java.util.ResourceBundle;
  * @author Milton Zarzuela
  */
 
-public class UI{
+public class UI {
 
 		@FXML
 		private ResourceBundle resources;
@@ -121,7 +118,7 @@ public class UI{
 		@FXML
 		private void AddButtonClick(ActionEvent event) {
 			if (TitleAdd == null || TitleAdd.getText().isBlank() || ArtistAdd == null || ArtistAdd.getText().isBlank()){
-				JOptionPane.showMessageDialog(null, "Please enter a title and artist");
+				new Alert(Alert.AlertType.ERROR, "Title and Artist are required").showAndWait();
 				return;
 			}
 			String title = TitleAdd.getText();
@@ -129,6 +126,11 @@ public class UI{
 			String album = AlbumAdd == null || AlbumAdd.getText().isBlank() ? "" : AlbumAdd.getText();
 			int year = YearAdd == null || YearAdd.getText().isBlank() ? -1 : Integer.parseInt(YearAdd.getText());
 			Song song = new Song(title, artist, album, year);
+			if (Song.isDuplicate(song)) {
+				System.out.println("A Song with this title and artist already exists");
+				new Alert(Alert.AlertType.ERROR, "A Song with this title and artist already exists").showAndWait();
+				return;
+			}
 			Song.addSong(song, false);
 			TitleAdd.clear();
 			ArtistAdd.clear();

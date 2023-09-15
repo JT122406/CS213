@@ -30,10 +30,16 @@ public class Song implements Comparable<Song> {
         this.wording = "Title: " + title + " - Artist: " + artist + albumText + yeartext;
     }
 
-    public static void addSong(Song song, boolean first){
+    public static void addSong(Song song, boolean first) {
         allSongs.add(song);
         if (allSongs.size() > 1) songSort(allSongs);
         if (!first) saveData(allSongs);
+    }
+
+    public static boolean isDuplicate(Song song){
+        for (Song song1 : allSongs)
+            if (song.title.equals(song1.title) && song.artist.equals(song1.artist)) return true;
+        return false;
     }
 
     public static void removeSong(Song song){
