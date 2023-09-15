@@ -179,16 +179,30 @@ public class UI{
 		}
 
 		public void updateList(){
-			if (Song.allSongs.size() == 0) ListViewer.setItems(null);
+			if (Song.allSongs.isEmpty()){
+				ListViewer.setItems(null);
+				disableButtons();
+				return;
+			}
+			enableButtons();
 			ArrayList<String> songList = new ArrayList<>();
 			for (Song song: Song.allSongs) songList.add(song.getWording());
 			ListViewer.setItems(FXCollections.observableList(songList));
 			ListViewer.getSelectionModel().selectFirst();
 		}
 
+		private void enableButtons(){
+			DeleteButton.setDisable(false);
+			EditButton.setDisable(false);
+		}
+
+		private void disableButtons(){
+			DeleteButton.setDisable(true);
+			EditButton.setDisable(true);
+		}
+
 		@FXML
 		private void QuitClick(ActionEvent event) {
 			Platform.exit();
 		}
-
 	}
