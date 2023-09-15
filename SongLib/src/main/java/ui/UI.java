@@ -181,24 +181,32 @@ public class UI{
 		public void updateList(){
 			if (Song.allSongs.isEmpty()){
 				ListViewer.setItems(null);
-				disableButtons();
+				disableEdits();
 				return;
 			}
-			enableButtons();
+			enableEdits();
 			ArrayList<String> songList = new ArrayList<>();
 			for (Song song: Song.allSongs) songList.add(song.getWording());
 			ListViewer.setItems(FXCollections.observableList(songList));
 			ListViewer.getSelectionModel().selectFirst();
 		}
 
-		private void enableButtons(){
+		private void enableEdits(){
 			DeleteButton.setDisable(false);
 			EditButton.setDisable(false);
+			DetailsEdit.setDisable(false);
+			AlbumEdit.setDisable(false);
+			ArtistEdit.setDisable(false);
+			YearEdit.setDisable(false);
 		}
 
-		private void disableButtons(){
+		private void disableEdits(){
 			DeleteButton.setDisable(true);
 			EditButton.setDisable(true);
+			DetailsEdit.setDisable(true);
+			AlbumEdit.setDisable(true);
+			ArtistEdit.setDisable(true);
+			YearEdit.setDisable(true);
 		}
 
 		@FXML
