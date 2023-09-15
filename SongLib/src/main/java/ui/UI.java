@@ -79,7 +79,7 @@ public class UI{
 		private ListView<String> ListViewer;
 
 		@FXML
-		private MenuItem Quit;
+		private MenuItem quit;
 
 		@FXML
 		void initialize() {
@@ -99,7 +99,7 @@ public class UI{
 			assert x3 != null : "fx:id=\"x3\" was not injected: check your FXML file 'SongLib.fxml'.";
 			assert x4 != null : "fx:id=\"x4\" was not injected: check your FXML file 'SongLib.fxml'.";
 			assert ListViewer != null : "fx:id=\"ListViewer\" was not injected: check your FXML file 'SongLib.fxml'.";
-			assert Quit != null : "fx:id=\"Quit\" was not injected: check your FXML file 'SongLib.fxml'.";
+			assert quit != null : "fx:id=\"Quit\" was not injected: check your FXML file 'SongLib.fxml'.";
 		}
 
 		@FXML
