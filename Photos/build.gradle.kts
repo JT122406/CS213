@@ -20,18 +20,18 @@ dependencies {
 }
 
 javafx {
-    version = "20"
+    version = "21"
     modules = mutableListOf("javafx.base", "javafx.controls", "javafx.fxml", "javafx.graphics")
 }
 
 java {
-    if (JavaVersion.current() <= JavaVersion.VERSION_20){
-        toolchain.languageVersion.set(JavaLanguageVersion.of(20))
+    if (JavaVersion.current() <= JavaVersion.VERSION_21){
+        toolchain.languageVersion.set(JavaLanguageVersion.of(21))
     }
 }
 
 tasks.javadoc {
-    destinationDir = file("$projectDir/docs/javadoc")
+    setDestinationDir(file("$projectDir/docs/javadoc"))
 }
 
 application {
