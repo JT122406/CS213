@@ -30,10 +30,6 @@ java {
     }
 }
 
-tasks.javadoc {
-    setDestinationDir(file("$projectDir/docs/javadoc"))
-}
+tasks.javadoc.get().setDestinationDir(file("$projectDir/docs/javadoc"))
 
-application {
-    mainClass.set("photos.Photos")
-}
+application.mainClass.set("photos.Photos")
