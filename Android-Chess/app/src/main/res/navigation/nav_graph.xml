@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            app:startDestination="@id/Home">
+
+    <fragment
+            android:id="@+id/Home"
+            android:name="edu.rutgers.chess.ui.HomeScreen"
+            android:label="@string/home_screen_label"
+            tools:layout="@layout/home_screen">
+
+        <action
+                android:id="@+id/action_FirstFragment_to_SecondFragment"
+                app:destination="@id/Game"/>
+        <action
+                android:id="@+id/action_Home_to_ViewGames"
+                app:destination="@id/ViewGames"/>
+    </fragment>
+    <fragment
+            android:id="@+id/Game"
+            android:name="edu.rutgers.chess.ui.GameScreen"
+            android:label="@string/game_screen_label"
+            tools:layout="@layout/game_screen">
+
+        <action
+                android:id="@+id/action_SecondFragment_to_FirstFragment"
+                app:destination="@id/Home"/>
+    </fragment>
+    <fragment
+            android:id="@+id/ViewGames"
+            android:name="edu.rutgers.chess.ui.ViewGamesScreen"
+            android:label="@string/view_games_screen_label"
+            tools:layout="@layout/viewgames_screen">
+
+        <action
+                android:id="@+id/action_ViewGames_to_Home"
+                app:destination="@id/Home"/>
+    </fragment>
+</navigation>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Chess</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="home_screen_label">Chess Home</string>
+    <string name="game_screen_label">Chess Game Player</string>
+    <string name="view_games_screen_label">Chess View Games</string>
+    <string name="newGame">New Game</string>
+    <string name="undo">Undo Move</string>
+
+    <string name="hello_chess_app">Welcome to Chess</string>
+    <string name="view_games">View Games</string>
+    <string name="chesspieces">ChessPieces</string>
+    <string name="concede">Concede</string>
+    <string name="draw">Draw</string>
+</resources>

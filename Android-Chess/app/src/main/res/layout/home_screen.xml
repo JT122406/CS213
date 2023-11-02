@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.HomeScreen">
+
+    <TextView
+            android:id="@+id/textview_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_chess_app"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3"/>
+
+    <Button
+            android:id="@+id/newGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/newGame"
+            app:layout_constraintTop_toBottomOf="@+id/textview_first"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintBottom_toTopOf="@+id/viewGames"/>
+    <Button
+            android:text="@string/view_games"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp" android:id="@+id/viewGames"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="120dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    <ImageView
+            android:src="@mipmap/ic_launcher_foreground"
+            android:layout_width="217dp"
+            android:layout_height="198dp" android:id="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="4dp" android:layout_marginEnd="138dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="138dp"
+            app:layout_constraintHorizontal_bias="0.5" android:contentDescription="@string/chesspieces"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
